@@ -1,0 +1,484 @@
+.research-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.router-container {
+  /* position: fixed; */
+  /* top: 0px; */
+  min-height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 5%;
+  background: var(#fff, --active-color);
+  z-index: 100;
+}
+
+.router-container nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+}
+
+.router-title {
+  margin-left: 15px;
+  /* 下划线 */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  /* 下边缘 */
+  border-bottom: solid transparent 2px;
+  /* 上下内边距 */
+  padding: 8px 0;
+  /* 缓入缓出 */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* 悬停 */
+.router-title:hover {
+  transform: scale(1.05);
+}
+
+/* 弹出框取消动画 */
+.el-badge__content {
+  /* 取消动画 */
+  transition: none !important; 
+}
+
+/* 响应式下划线颜色 */
+.router-title.active {
+  border-bottom-color: var(--active-color, #fff);
+}
+
+/* 头像 */
+#my-icon {
+  width: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 头像悬停 */
+#my-icon:hover {
+  transform: scale(1.2) rotate(10deg);
+  box-shadow: 4px 0px 8px rgba(13, 169, 148, 0.7);
+}
+
+/* 弹出框样式 */
+.my-github-popover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#github-icon {
+  width: 25px;
+  height: 25px;
+}
+
+
+.content-container {
+  width: 100%;
+  /* height: calc(100vh - var(--router-height, 0px));  */
+  height: 100vh;
+  padding: 0 5%;
+  /* transform: translateY(var(--router-height, 0px)); */
+  overflow-y: scroll;
+
+  /* 纵向滚动强制对齐, 不会停留在内部元素之间 */
+  scroll-snap-type: y mandatory;
+  /* 隐藏 Firefox 滚动条 */
+  scrollbar-width: none; 
+
+  transition: all 0.3s ease-in-out;
+}
+
+.content-container::-webkit-scrollbar {
+  /* 隐藏 Chrome, Edge, Safari 的滚动条 */
+  display: none; 
+}
+
+.content-section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* 动画 */
+.content-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.about-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#my-info-icon {
+  width: 200px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+/* 头像悬停 */
+#my-info-icon:hover {
+  transform: scale(1.05) rotate(10deg);
+  box-shadow: 10px 0px 8px rgba(13, 169, 148, 0.7);
+}
+
+.self-introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.el-button {
+  margin-top: 30px;
+  background: linear-gradient(to right, #67c23a, #409eff);
+  transition: all 0.3s ease-in-out;
+}
+
+.el-button:hover {
+  transform: scale(1.05);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #67c23a, #409eff);
+  background-clip: text;
+  /* 兼容 WebKit 浏览器 */
+  -webkit-background-clip: text;
+  /* 让文本变透明，只显示背景 */
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+#skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  width: 100%;
+}
+
+.mainsub-skills-map {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.skill-category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 10px;
+  width: 100%;
+}
+
+.main-skill-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 0 10px;
+  min-height: 90px;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-skill-map:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.main-skill-map h4 {
+  font-size: 10px;
+  text-align: center;
+}
+
+.main-skill-category-icon {
+  width: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+
+.sub-skill-category-icon {
+  width: 30px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.sub-skill-map {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.sub-skill-map:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.sub-skill-map h5 {
+  font-size: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 0;
+  flex-grow: 0;
+}
+
+.sub-skill-map h6 {
+  font-size: 8px;
+  text-align: end;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+
+
+#research {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.el-carousel,
+.el-carousel__container {
+  width: 100%;
+  height: 100%;
+}
+
+.el-carousel__item {
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.el-carousel__indicators {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.is-active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.project-container h2 {
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.project-skills-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-skills-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-skills-map:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.project-skills-map h4 {
+  font-size: 10px;
+}
+
+video {
+  min-width: 950px;
+  height: 350px;
+  margin-bottom: 0;
+}
+
+.research-img {
+  /* width: 800px; */
+  height: 300px;
+  /* border-radius: 10px; */
+  margin-bottom: 0;
+}
+
+#future {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.center-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.petal {
+  opacity: 0.2;
+  transition: opacity 1.5s ease-in-out; 
+}
+
+.petal.active {
+  opacity: 1;
+}
+
+.petal:hover {
+  cursor: pointer;
+}
+
+.petal-text-map {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.5s ease-in-out; 
+}
+
+.petal-text-map h2 {
+  text-align: center;
+  font-size: 10px;
+  width: 50px;
+}
+
+.center-text-container {
+  transition: all 0.5s ease-in-out;
+}
+.center-text-container:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.petal-text-map img {
+  width: 45px;
+  transition: all 0.5s ease-in-out;
+}
+
+.petal-text-map:hover {
+  transform: scale(1.1);
+}
+
+foreignObject:hover {
+  cursor: pointer;
+}
+
+.petal-0 { 
+  top: 8%; 
+  left: 48%
+} 
+.petal-1 { 
+  top: 29%; 
+  left: 78%
+} 
+.petal-2 { 
+  top: 60%; 
+  left: 70%
+} 
+.petal-3 { 
+  top: 69%; 
+  left: 43%
+} 
+.petal-4 { 
+  top: 53%; 
+  left: 12%
+} 
+.petal-5 { 
+  top: 18%; 
+  left: 16%
+} 
+
+
+
+
+
+

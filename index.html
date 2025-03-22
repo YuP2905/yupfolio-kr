@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My CV and Research</title>
+  <link
+    rel="stylesheet"
+    href="static/css/element-plus.css"
+  />
+  <link 
+    rel="stylesheet" 
+    href="static/css/element-plus-dark.css" 
+  />
+  <link 
+    rel="stylesheet" 
+    href="./static/css/normal.css" 
+  />
+  <script src="./static/js/vue.global.js"></script>
+  <script src="./static/js/element-plus.js"></script>
+  <link 
+    rel="stylesheet" 
+    href="./static/css/index.css"
+  >
+</head>
+<body>
+  <div class="research-container dark" id="app">
+
+    <div class="router-container">
+      <el-popover
+        placement="bottom"
+        trigger="hover"
+      >
+        <template #reference>
+          <img src="./static/img/icon.jpg" 
+            alt="icon" 
+            id="my-icon" 
+            ref="myIcon"
+          >
+        </template>
+          <a href="https://github.com/YuP2905" class="my-github-popover">
+            <img :src="githubIconSrc" alt="Github Icon" id="github-icon">
+            <p :style="{color: activeColor}">My Github</p>
+          </a>
+      </el-popover>
+
+      <nav>
+        <a 
+          v-for="(item, index) in myInfos" 
+          :key="index" 
+           @click="handleClick(item.section)"
+          class="router-title"
+          :class="{ active: currentSection === item.section }"
+          :style="{ '--active-color': activeColor }"
+        >
+          <el-badge :is-dot="currentSection === item.section">
+            <p>{{ item.name }}</p>
+          </el-badge>
+        </a>
+      </nav>
+      <el-switch
+        v-model="isDarkModel"
+        size="large"
+        style="margin-left: 15px;"
+      />
+      
+    </div>
+
+    <div class="content-container">
+        <v-about></v-about>
+        <v-skill></v-skill>
+        <v-content></v-content>
+        <v-future></v-future>
+    </div>
+  </div>
+  <script src="./static/js/index.js"></script>
+</body>
+</html>
