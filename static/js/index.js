@@ -318,24 +318,6 @@ const vContent = defineComponent({
         video: '',
         img: "lora.png"
       },
-      {
-        title: "Research 2: Automated Floorplan Generation via DiT Models: A Graph-Based Approach to Architectural Layouts(Ongoing)",
-        description: `
-        본 논문에서는 벡터 기반 건축 평면도를 자동으로 생성하기 위한 그래프 기반 Diffusion 모델을 제안한다. 본 연구는 그래픽 접근 방식을 채택하여 확산 프로세스를 그래프 구조와 통합함으로써 
-        건축 요소의 2D 좌표를 효과적으로 노이즈 제거 및 최적화하여 정밀한 기하학적 정렬을 달성하고 구조적 관계를 구축한다. 이 방법의 핵심은 그래프 제약 조건과 Transformer 아키텍처의 결합으로, 
-        위치 임베딩(positional embeddings)을 활용하여 공간 정확도를 유지하고 설계의 해석 가능성을 향상시키는 것이다. 이러한 이중 메커니즘을 통해 모델은 그래프 구조에 내재된 건축 제약을 준수하면서 
-        제어된 노이즈 제거 과정을 거쳐 평면도를 반복적으로 최적화할 수 있으며, 궁극적으로 직접 사용 가능한 벡터 그래픽 건축 평면도를 생성할 수 있다.
-        (좋은 그래픽 카드가 없어 훈련 비용이 많이 들어서 완성하지 못했다.)
-        `,
-        skills: [
-          {name: "Numpy", img: "numpy.png"},
-          {name: "Shapely", img: "shapely.png"},
-          {name: "Matplotlib", img: "matplotlib.png"},
-          {name: "Pytorch", img: "pytorch.png"},
-        ],
-        video: '',
-        img: "dit.png"
-      },
     ]);
 
     return {
